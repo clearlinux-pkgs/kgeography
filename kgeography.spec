@@ -5,29 +5,33 @@
 # Source0 file verified with key 0xDBD2CE893E2D1C87 (cfeck@kde.org)
 #
 Name     : kgeography
-Version  : 18.08.0
-Release  : 2
-URL      : https://download.kde.org/stable/applications/18.08.0/src/kgeography-18.08.0.tar.xz
-Source0  : https://download.kde.org/stable/applications/18.08.0/src/kgeography-18.08.0.tar.xz
-Source99 : https://download.kde.org/stable/applications/18.08.0/src/kgeography-18.08.0.tar.xz.sig
+Version  : 18.12.2
+Release  : 3
+URL      : https://download.kde.org/stable/applications/18.12.2/src/kgeography-18.12.2.tar.xz
+Source0  : https://download.kde.org/stable/applications/18.12.2/src/kgeography-18.12.2.tar.xz
+Source99 : https://download.kde.org/stable/applications/18.12.2/src/kgeography-18.12.2.tar.xz.sig
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : GFDL-1.2 GPL-2.0
-Requires: kgeography-bin
-Requires: kgeography-data
-Requires: kgeography-license
-Requires: kgeography-locales
+Requires: kgeography-bin = %{version}-%{release}
+Requires: kgeography-data = %{version}-%{release}
+Requires: kgeography-license = %{version}-%{release}
+Requires: kgeography-locales = %{version}-%{release}
 BuildRequires : buildreq-cmake
 BuildRequires : buildreq-kde
 
 %description
-KGeography is a geography learning tool
+Some of these flags have been obtained using sodipodi to convert the sodipodi flags
+collection from svg to png and then modified a bit (sorry) to be of similar sizes.
+Sodipodi flags collection can be found at
+http://www.sodipodi.com/index.php3?section=clipart/flags
+Those flags are licensed under the Creative Commons Public Domain license.
 
 %package bin
 Summary: bin components for the kgeography package.
 Group: Binaries
-Requires: kgeography-data
-Requires: kgeography-license
+Requires: kgeography-data = %{version}-%{release}
+Requires: kgeography-license = %{version}-%{release}
 
 %description bin
 bin components for the kgeography package.
@@ -66,26 +70,26 @@ locales components for the kgeography package.
 
 
 %prep
-%setup -q -n kgeography-18.08.0
+%setup -q -n kgeography-18.12.2
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1535197465
-mkdir clr-build
+export SOURCE_DATE_EPOCH=1549866741
+mkdir -p clr-build
 pushd clr-build
 %cmake ..
 make  %{?_smp_mflags}
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1535197465
+export SOURCE_DATE_EPOCH=1549866741
 rm -rf %{buildroot}
-mkdir -p %{buildroot}/usr/share/doc/kgeography
-cp COPYING %{buildroot}/usr/share/doc/kgeography/COPYING
-cp COPYING.DOC %{buildroot}/usr/share/doc/kgeography/COPYING.DOC
+mkdir -p %{buildroot}/usr/share/package-licenses/kgeography
+cp COPYING %{buildroot}/usr/share/package-licenses/kgeography/COPYING
+cp COPYING.DOC %{buildroot}/usr/share/package-licenses/kgeography/COPYING.DOC
 pushd clr-build
 %make_install
 popd
@@ -591,6 +595,24 @@ popd
 /usr/share/kgeography/flags/norfolk_island.png
 /usr/share/kgeography/flags/northern_mariana_islands.png
 /usr/share/kgeography/flags/norway.png
+/usr/share/kgeography/flags/norway/akershus.png
+/usr/share/kgeography/flags/norway/aust-agder.png
+/usr/share/kgeography/flags/norway/buskerud.png
+/usr/share/kgeography/flags/norway/finnmark.png
+/usr/share/kgeography/flags/norway/hedmark.png
+/usr/share/kgeography/flags/norway/hordaland.png
+/usr/share/kgeography/flags/norway/more_og_romsdal.png
+/usr/share/kgeography/flags/norway/nordland.png
+/usr/share/kgeography/flags/norway/oppland.png
+/usr/share/kgeography/flags/norway/oslo.png
+/usr/share/kgeography/flags/norway/ostfold.png
+/usr/share/kgeography/flags/norway/rogaland.png
+/usr/share/kgeography/flags/norway/sogn_og_fjordane.png
+/usr/share/kgeography/flags/norway/telemark.png
+/usr/share/kgeography/flags/norway/troms.png
+/usr/share/kgeography/flags/norway/trondelag.png
+/usr/share/kgeography/flags/norway/vest-agder.png
+/usr/share/kgeography/flags/norway/vestfold.png
 /usr/share/kgeography/flags/oman.png
 /usr/share/kgeography/flags/pakistan.png
 /usr/share/kgeography/flags/palau.png
@@ -1106,26 +1128,12 @@ popd
 /usr/share/locale/uk/LC_SCRIPTS/kgeography/general.pmap
 /usr/share/locale/uk/LC_SCRIPTS/kgeography/general.pmapc
 /usr/share/locale/uk/LC_SCRIPTS/kgeography/kgeography.js
+/usr/share/metainfo/org.kde.kgeography.appdata.xml
 
 %files doc
 %defattr(0644,root,root,0755)
-/usr/share/doc/HTML/ca/kgeography/first-start1.png
-/usr/share/doc/HTML/ca/kgeography/first-start10.png
-/usr/share/doc/HTML/ca/kgeography/first-start11.png
-/usr/share/doc/HTML/ca/kgeography/first-start12.png
-/usr/share/doc/HTML/ca/kgeography/first-start13.png
-/usr/share/doc/HTML/ca/kgeography/first-start2.png
-/usr/share/doc/HTML/ca/kgeography/first-start3.png
-/usr/share/doc/HTML/ca/kgeography/first-start4.png
-/usr/share/doc/HTML/ca/kgeography/first-start5.png
-/usr/share/doc/HTML/ca/kgeography/first-start6.png
-/usr/share/doc/HTML/ca/kgeography/first-start7.png
-/usr/share/doc/HTML/ca/kgeography/first-start8.png
-/usr/share/doc/HTML/ca/kgeography/first-start9.png
 /usr/share/doc/HTML/ca/kgeography/index.cache.bz2
 /usr/share/doc/HTML/ca/kgeography/index.docbook
-/usr/share/doc/HTML/ca/kgeography/kgeography.png
-/usr/share/doc/HTML/ca/kgeography/zoom.png
 /usr/share/doc/HTML/de/kgeography/first-start1.png
 /usr/share/doc/HTML/de/kgeography/first-start10.png
 /usr/share/doc/HTML/de/kgeography/first-start11.png
@@ -1226,9 +1234,9 @@ popd
 /usr/share/doc/HTML/uk/kgeography/zoom.png
 
 %files license
-%defattr(-,root,root,-)
-/usr/share/doc/kgeography/COPYING
-/usr/share/doc/kgeography/COPYING.DOC
+%defattr(0644,root,root,0755)
+/usr/share/package-licenses/kgeography/COPYING
+/usr/share/package-licenses/kgeography/COPYING.DOC
 
 %files locales -f kgeography.lang
 %defattr(-,root,root,-)

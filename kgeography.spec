@@ -5,11 +5,11 @@
 # Source0 file verified with key 0xDBD2CE893E2D1C87 (cfeck@kde.org)
 #
 Name     : kgeography
-Version  : 19.12.1
-Release  : 17
-URL      : https://download.kde.org/stable/release-service/19.12.1/src/kgeography-19.12.1.tar.xz
-Source0  : https://download.kde.org/stable/release-service/19.12.1/src/kgeography-19.12.1.tar.xz
-Source1  : https://download.kde.org/stable/release-service/19.12.1/src/kgeography-19.12.1.tar.xz.sig
+Version  : 19.12.2
+Release  : 18
+URL      : https://download.kde.org/stable/release-service/19.12.2/src/kgeography-19.12.2.tar.xz
+Source0  : https://download.kde.org/stable/release-service/19.12.2/src/kgeography-19.12.2.tar.xz
+Source1  : https://download.kde.org/stable/release-service/19.12.2/src/kgeography-19.12.2.tar.xz.sig
 Summary  : Geography Trainer
 Group    : Development/Tools
 License  : GFDL-1.2 GPL-2.0
@@ -70,15 +70,15 @@ locales components for the kgeography package.
 
 
 %prep
-%setup -q -n kgeography-19.12.1
-cd %{_builddir}/kgeography-19.12.1
+%setup -q -n kgeography-19.12.2
+cd %{_builddir}/kgeography-19.12.2
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1578615359
+export SOURCE_DATE_EPOCH=1581020969
 mkdir -p clr-build
 pushd clr-build
 # -Werror is for werrorists
@@ -95,11 +95,11 @@ make  %{?_smp_mflags}  VERBOSE=1
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1578615359
+export SOURCE_DATE_EPOCH=1581020969
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/kgeography
-cp %{_builddir}/kgeography-19.12.1/COPYING %{buildroot}/usr/share/package-licenses/kgeography/06877624ea5c77efe3b7e39b0f909eda6e25a4ec
-cp %{_builddir}/kgeography-19.12.1/COPYING.DOC %{buildroot}/usr/share/package-licenses/kgeography/1bd373e4851a93027ba70064bd7dbdc6827147e1
+cp %{_builddir}/kgeography-19.12.2/COPYING %{buildroot}/usr/share/package-licenses/kgeography/06877624ea5c77efe3b7e39b0f909eda6e25a4ec
+cp %{_builddir}/kgeography-19.12.2/COPYING.DOC %{buildroot}/usr/share/package-licenses/kgeography/1bd373e4851a93027ba70064bd7dbdc6827147e1
 pushd clr-build
 %make_install
 popd
@@ -605,24 +605,17 @@ popd
 /usr/share/kgeography/flags/norfolk_island.png
 /usr/share/kgeography/flags/northern_mariana_islands.png
 /usr/share/kgeography/flags/norway.png
-/usr/share/kgeography/flags/norway/akershus.png
-/usr/share/kgeography/flags/norway/aust-agder.png
-/usr/share/kgeography/flags/norway/buskerud.png
-/usr/share/kgeography/flags/norway/finnmark.png
-/usr/share/kgeography/flags/norway/hedmark.png
-/usr/share/kgeography/flags/norway/hordaland.png
+/usr/share/kgeography/flags/norway/agder.png
+/usr/share/kgeography/flags/norway/innlandet.png
 /usr/share/kgeography/flags/norway/more_og_romsdal.png
 /usr/share/kgeography/flags/norway/nordland.png
-/usr/share/kgeography/flags/norway/oppland.png
 /usr/share/kgeography/flags/norway/oslo.png
-/usr/share/kgeography/flags/norway/ostfold.png
 /usr/share/kgeography/flags/norway/rogaland.png
-/usr/share/kgeography/flags/norway/sogn_og_fjordane.png
-/usr/share/kgeography/flags/norway/telemark.png
-/usr/share/kgeography/flags/norway/troms.png
+/usr/share/kgeography/flags/norway/troms_og_finnmark.png
 /usr/share/kgeography/flags/norway/trondelag.png
-/usr/share/kgeography/flags/norway/vest-agder.png
-/usr/share/kgeography/flags/norway/vestfold.png
+/usr/share/kgeography/flags/norway/vestfold_og_telemark.png
+/usr/share/kgeography/flags/norway/vestland.png
+/usr/share/kgeography/flags/norway/viken.png
 /usr/share/kgeography/flags/oman.png
 /usr/share/kgeography/flags/pakistan.png
 /usr/share/kgeography/flags/palau.png

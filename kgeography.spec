@@ -5,11 +5,11 @@
 # Source0 file verified with key 0xDBD2CE893E2D1C87 (cfeck@kde.org)
 #
 Name     : kgeography
-Version  : 20.04.1
-Release  : 21
-URL      : https://download.kde.org/stable/release-service/20.04.1/src/kgeography-20.04.1.tar.xz
-Source0  : https://download.kde.org/stable/release-service/20.04.1/src/kgeography-20.04.1.tar.xz
-Source1  : https://download.kde.org/stable/release-service/20.04.1/src/kgeography-20.04.1.tar.xz.sig
+Version  : 20.04.2
+Release  : 22
+URL      : https://download.kde.org/stable/release-service/20.04.2/src/kgeography-20.04.2.tar.xz
+Source0  : https://download.kde.org/stable/release-service/20.04.2/src/kgeography-20.04.2.tar.xz
+Source1  : https://download.kde.org/stable/release-service/20.04.2/src/kgeography-20.04.2.tar.xz.sig
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : GFDL-1.2 GPL-2.0
@@ -66,15 +66,15 @@ locales components for the kgeography package.
 
 
 %prep
-%setup -q -n kgeography-20.04.1
-cd %{_builddir}/kgeography-20.04.1
+%setup -q -n kgeography-20.04.2
+cd %{_builddir}/kgeography-20.04.2
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1589849565
+export SOURCE_DATE_EPOCH=1591903194
 mkdir -p clr-build
 pushd clr-build
 export GCC_IGNORE_WERROR=1
@@ -90,11 +90,11 @@ make  %{?_smp_mflags}  VERBOSE=1
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1589849565
+export SOURCE_DATE_EPOCH=1591903194
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/kgeography
-cp %{_builddir}/kgeography-20.04.1/COPYING %{buildroot}/usr/share/package-licenses/kgeography/06877624ea5c77efe3b7e39b0f909eda6e25a4ec
-cp %{_builddir}/kgeography-20.04.1/COPYING.DOC %{buildroot}/usr/share/package-licenses/kgeography/1bd373e4851a93027ba70064bd7dbdc6827147e1
+cp %{_builddir}/kgeography-20.04.2/COPYING %{buildroot}/usr/share/package-licenses/kgeography/06877624ea5c77efe3b7e39b0f909eda6e25a4ec
+cp %{_builddir}/kgeography-20.04.2/COPYING.DOC %{buildroot}/usr/share/package-licenses/kgeography/1bd373e4851a93027ba70064bd7dbdc6827147e1
 pushd clr-build
 %make_install
 popd

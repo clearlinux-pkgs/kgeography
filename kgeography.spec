@@ -5,11 +5,11 @@
 # Source0 file verified with key 0xDBD2CE893E2D1C87 (cfeck@kde.org)
 #
 Name     : kgeography
-Version  : 20.04.2
-Release  : 22
-URL      : https://download.kde.org/stable/release-service/20.04.2/src/kgeography-20.04.2.tar.xz
-Source0  : https://download.kde.org/stable/release-service/20.04.2/src/kgeography-20.04.2.tar.xz
-Source1  : https://download.kde.org/stable/release-service/20.04.2/src/kgeography-20.04.2.tar.xz.sig
+Version  : 20.08.0
+Release  : 23
+URL      : https://download.kde.org/stable/release-service/20.08.0/src/kgeography-20.08.0.tar.xz
+Source0  : https://download.kde.org/stable/release-service/20.08.0/src/kgeography-20.08.0.tar.xz
+Source1  : https://download.kde.org/stable/release-service/20.08.0/src/kgeography-20.08.0.tar.xz.sig
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : GFDL-1.2 GPL-2.0
@@ -66,15 +66,15 @@ locales components for the kgeography package.
 
 
 %prep
-%setup -q -n kgeography-20.04.2
-cd %{_builddir}/kgeography-20.04.2
+%setup -q -n kgeography-20.08.0
+cd %{_builddir}/kgeography-20.08.0
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1591903194
+export SOURCE_DATE_EPOCH=1597782018
 mkdir -p clr-build
 pushd clr-build
 export GCC_IGNORE_WERROR=1
@@ -86,15 +86,15 @@ export FCFLAGS="$FFLAGS -O3 -ffat-lto-objects -flto=4 "
 export FFLAGS="$FFLAGS -O3 -ffat-lto-objects -flto=4 "
 export CXXFLAGS="$CXXFLAGS -O3 -ffat-lto-objects -flto=4 "
 %cmake ..
-make  %{?_smp_mflags}  VERBOSE=1
+make  %{?_smp_mflags}
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1591903194
+export SOURCE_DATE_EPOCH=1597782018
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/kgeography
-cp %{_builddir}/kgeography-20.04.2/COPYING %{buildroot}/usr/share/package-licenses/kgeography/06877624ea5c77efe3b7e39b0f909eda6e25a4ec
-cp %{_builddir}/kgeography-20.04.2/COPYING.DOC %{buildroot}/usr/share/package-licenses/kgeography/1bd373e4851a93027ba70064bd7dbdc6827147e1
+cp %{_builddir}/kgeography-20.08.0/COPYING %{buildroot}/usr/share/package-licenses/kgeography/06877624ea5c77efe3b7e39b0f909eda6e25a4ec
+cp %{_builddir}/kgeography-20.08.0/COPYING.DOC %{buildroot}/usr/share/package-licenses/kgeography/1bd373e4851a93027ba70064bd7dbdc6827147e1
 pushd clr-build
 %make_install
 popd
@@ -408,28 +408,6 @@ popd
 /usr/share/kgeography/flags/fiji.png
 /usr/share/kgeography/flags/finland.png
 /usr/share/kgeography/flags/france.png
-/usr/share/kgeography/flags/france/alsace.png
-/usr/share/kgeography/flags/france/aquitaine.png
-/usr/share/kgeography/flags/france/auvergne.png
-/usr/share/kgeography/flags/france/basse_normandie.png
-/usr/share/kgeography/flags/france/bourgogne.png
-/usr/share/kgeography/flags/france/bretagne.png
-/usr/share/kgeography/flags/france/centre_val_de_loire.png
-/usr/share/kgeography/flags/france/champagne-ardennes.png
-/usr/share/kgeography/flags/france/corse.png
-/usr/share/kgeography/flags/france/franche_comte.png
-/usr/share/kgeography/flags/france/haute_normandie.png
-/usr/share/kgeography/flags/france/ile_de_france.png
-/usr/share/kgeography/flags/france/languedoc_roussillon.png
-/usr/share/kgeography/flags/france/limousin.png
-/usr/share/kgeography/flags/france/lorraine.png
-/usr/share/kgeography/flags/france/midi_pyrenees.png
-/usr/share/kgeography/flags/france/nord-pas_de_calais.png
-/usr/share/kgeography/flags/france/pays_de_la_loire.png
-/usr/share/kgeography/flags/france/picardie.png
-/usr/share/kgeography/flags/france/poitou_charentes.png
-/usr/share/kgeography/flags/france/provence_alpes_cote_d_azur.png
-/usr/share/kgeography/flags/france/rhone_alpes.png
 /usr/share/kgeography/flags/french_polynesia.png
 /usr/share/kgeography/flags/gabon.png
 /usr/share/kgeography/flags/gambia.png

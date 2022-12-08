@@ -5,11 +5,11 @@
 # Source0 file verified with key 0xBB463350D6EF31EF (heiko@shruuf.de)
 #
 Name     : kgeography
-Version  : 22.08.3
-Release  : 46
-URL      : https://download.kde.org/stable/release-service/22.08.3/src/kgeography-22.08.3.tar.xz
-Source0  : https://download.kde.org/stable/release-service/22.08.3/src/kgeography-22.08.3.tar.xz
-Source1  : https://download.kde.org/stable/release-service/22.08.3/src/kgeography-22.08.3.tar.xz.sig
+Version  : 22.12.0
+Release  : 47
+URL      : https://download.kde.org/stable/release-service/22.12.0/src/kgeography-22.12.0.tar.xz
+Source0  : https://download.kde.org/stable/release-service/22.12.0/src/kgeography-22.12.0.tar.xz
+Source1  : https://download.kde.org/stable/release-service/22.12.0/src/kgeography-22.12.0.tar.xz.sig
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : GFDL-1.2 GPL-2.0
@@ -66,15 +66,15 @@ locales components for the kgeography package.
 
 
 %prep
-%setup -q -n kgeography-22.08.3
-cd %{_builddir}/kgeography-22.08.3
+%setup -q -n kgeography-22.12.0
+cd %{_builddir}/kgeography-22.12.0
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1667885293
+export SOURCE_DATE_EPOCH=1670540835
 mkdir -p clr-build
 pushd clr-build
 export GCC_IGNORE_WERROR=1
@@ -90,7 +90,7 @@ make  %{?_smp_mflags}
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1667885293
+export SOURCE_DATE_EPOCH=1670540835
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/kgeography
 cp %{_builddir}/kgeography-%{version}/COPYING %{buildroot}/usr/share/package-licenses/kgeography/06877624ea5c77efe3b7e39b0f909eda6e25a4ec || :
@@ -274,10 +274,38 @@ popd
 /usr/share/kgeography/flags/belize.png
 /usr/share/kgeography/flags/benin.png
 /usr/share/kgeography/flags/bhutan.png
+/usr/share/kgeography/flags/blurred_usa_arkansas.png
+/usr/share/kgeography/flags/blurred_usa_california.png
+/usr/share/kgeography/flags/blurred_usa_florida.png
+/usr/share/kgeography/flags/blurred_usa_idaho.png
+/usr/share/kgeography/flags/blurred_usa_illinois.png
+/usr/share/kgeography/flags/blurred_usa_iowa.png
+/usr/share/kgeography/flags/blurred_usa_kansas.png
+/usr/share/kgeography/flags/blurred_usa_kentucky.png
+/usr/share/kgeography/flags/blurred_usa_maine.png
+/usr/share/kgeography/flags/blurred_usa_minnesota.png
+/usr/share/kgeography/flags/blurred_usa_montana.png
+/usr/share/kgeography/flags/blurred_usa_nebraska.png
+/usr/share/kgeography/flags/blurred_usa_nevada.png
+/usr/share/kgeography/flags/blurred_usa_new_hampshire.png
+/usr/share/kgeography/flags/blurred_usa_north_carolina.png
+/usr/share/kgeography/flags/blurred_usa_north_dakota.png
+/usr/share/kgeography/flags/blurred_usa_oklahoma.png
+/usr/share/kgeography/flags/blurred_usa_oregon.png
+/usr/share/kgeography/flags/blurred_usa_south_dakota.png
+/usr/share/kgeography/flags/blurred_usa_utah.png
+/usr/share/kgeography/flags/blurred_usa_vermont.png
+/usr/share/kgeography/flags/blurred_usa_virginia.png
+/usr/share/kgeography/flags/blurred_usa_washington.png
+/usr/share/kgeography/flags/blurred_usa_west_virginia.png
+/usr/share/kgeography/flags/blurred_usa_wisconsin.png
+/usr/share/kgeography/flags/blurred_usa_wyoming.png
 /usr/share/kgeography/flags/bolivia.png
 /usr/share/kgeography/flags/bosnia_herzegovina.png
 /usr/share/kgeography/flags/botswana.png
 /usr/share/kgeography/flags/brazil.png
+/usr/share/kgeography/flags/brazil/blurred_br_PN.png
+/usr/share/kgeography/flags/brazil/blurred_br_RJ.png
 /usr/share/kgeography/flags/brazil/br_AC.png
 /usr/share/kgeography/flags/brazil/br_AL.png
 /usr/share/kgeography/flags/brazil/br_AM.png
@@ -460,6 +488,13 @@ popd
 /usr/share/kgeography/flags/ireland/ulster.png
 /usr/share/kgeography/flags/israel.png
 /usr/share/kgeography/flags/italy.png
+/usr/share/kgeography/flags/italy/blurred_it-cal200.png
+/usr/share/kgeography/flags/italy/blurred_it-emi200.png
+/usr/share/kgeography/flags/italy/blurred_it-lat200.png
+/usr/share/kgeography/flags/italy/blurred_it-mar200.png
+/usr/share/kgeography/flags/italy/blurred_it-mol200.png
+/usr/share/kgeography/flags/italy/blurred_it-pug200.png
+/usr/share/kgeography/flags/italy/blurred_it-ven200.png
 /usr/share/kgeography/flags/italy/it-abr200.png
 /usr/share/kgeography/flags/italy/it-aos200.png
 /usr/share/kgeography/flags/italy/it-bas200.png
@@ -579,6 +614,7 @@ popd
 /usr/share/kgeography/flags/northern_mariana_islands.png
 /usr/share/kgeography/flags/norway.png
 /usr/share/kgeography/flags/norway/agder.png
+/usr/share/kgeography/flags/norway/blurred_oslo.png
 /usr/share/kgeography/flags/norway/innlandet.png
 /usr/share/kgeography/flags/norway/more_og_romsdal.png
 /usr/share/kgeography/flags/norway/nordland.png
@@ -601,6 +637,10 @@ popd
 /usr/share/kgeography/flags/peru/apurimac.png
 /usr/share/kgeography/flags/peru/arequipa.png
 /usr/share/kgeography/flags/peru/ayacucho.png
+/usr/share/kgeography/flags/peru/blurred_amazonas.png
+/usr/share/kgeography/flags/peru/blurred_ancash.png
+/usr/share/kgeography/flags/peru/blurred_san_martin.png
+/usr/share/kgeography/flags/peru/blurred_tacna.png
 /usr/share/kgeography/flags/peru/cajamarca.png
 /usr/share/kgeography/flags/peru/cusco.png
 /usr/share/kgeography/flags/peru/huancavelica.png
@@ -627,6 +667,24 @@ popd
 /usr/share/kgeography/flags/portugal/aveiro.png
 /usr/share/kgeography/flags/portugal/azores.png
 /usr/share/kgeography/flags/portugal/beja.png
+/usr/share/kgeography/flags/portugal/blurred_aveiro.png
+/usr/share/kgeography/flags/portugal/blurred_beja.png
+/usr/share/kgeography/flags/portugal/blurred_braga.png
+/usr/share/kgeography/flags/portugal/blurred_braganca.png
+/usr/share/kgeography/flags/portugal/blurred_castelo_branco.png
+/usr/share/kgeography/flags/portugal/blurred_coimbra.png
+/usr/share/kgeography/flags/portugal/blurred_evora.png
+/usr/share/kgeography/flags/portugal/blurred_faro.png
+/usr/share/kgeography/flags/portugal/blurred_guarda.png
+/usr/share/kgeography/flags/portugal/blurred_leiria.png
+/usr/share/kgeography/flags/portugal/blurred_lisboa.png
+/usr/share/kgeography/flags/portugal/blurred_portalegre.png
+/usr/share/kgeography/flags/portugal/blurred_porto.png
+/usr/share/kgeography/flags/portugal/blurred_santarem.png
+/usr/share/kgeography/flags/portugal/blurred_setubal.png
+/usr/share/kgeography/flags/portugal/blurred_viana_do_castelo.png
+/usr/share/kgeography/flags/portugal/blurred_vila_real.png
+/usr/share/kgeography/flags/portugal/blurred_viseu.png
 /usr/share/kgeography/flags/portugal/braga.png
 /usr/share/kgeography/flags/portugal/braganca.png
 /usr/share/kgeography/flags/portugal/castelo_branco.png
@@ -827,6 +885,7 @@ popd
 /usr/share/kgeography/flags/ukraine/Zakarpatya.png
 /usr/share/kgeography/flags/ukraine/Zaporizhya.png
 /usr/share/kgeography/flags/ukraine/Zhitomir.png
+/usr/share/kgeography/flags/ukraine/blurred_Cherkasy.png
 /usr/share/kgeography/flags/uruguay.png
 /usr/share/kgeography/flags/us_virgin_islands.png
 /usr/share/kgeography/flags/usa.png
